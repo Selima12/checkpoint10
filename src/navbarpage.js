@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
 MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Switch } from 'react-router-dom';
 
 class NavbarPage extends Component {
 state = {
@@ -14,7 +14,6 @@ toggleCollapse = () => {
 
 render() {
   return (
-    <Router>
       <MDBNavbar color="default-color" dark expand="md">
         <MDBNavbarBrand>
           <strong className="white-text">Selima</strong>
@@ -23,14 +22,18 @@ render() {
         <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
           <MDBNavbarNav left>
             <MDBNavItem active>
-              <Link to="/"><MDBNavLink >Home</MDBNavLink></Link>
+            <MDBNavLink > <Link to="/">Home</Link></MDBNavLink >
               
             </MDBNavItem>
             <MDBNavItem>
-            <Link to="/product"><MDBNavLink>Products</MDBNavLink></Link>
-            </MDBNavItem>
-            <MDBNavItem>
-            <Link to="/aboutus"><MDBNavLink >About Us</MDBNavLink></Link>
+           <MDBNavLink >
+ <Link to="/product">Products</Link>
+</MDBNavLink >
+</MDBNavItem>
+<MDBNavItem>
+           <MDBNavLink >
+<Link to="/aboutus">About Us</Link>
+</MDBNavLink >
             </MDBNavItem>
             
           </MDBNavbarNav>
@@ -61,7 +64,6 @@ render() {
           </MDBNavbarNav>
         </MDBCollapse>
       </MDBNavbar>
-    </Router>
     );
   }
 }
